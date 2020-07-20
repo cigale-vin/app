@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+
+for D in *; do
+    if [ -d "${D}" ]; then
+      #echo "${D}"   # your processing here
+      for filename in ./$D/*; do
+        if [[ $filename == *"cover"* ]]; then
+          magick $filename -strip -auto-orient -resize 300 $filename	
+	else
+          magick $filename -strip -auto-orient -resize 1300 $filename
+        fi
+      done
+    fi
+done
