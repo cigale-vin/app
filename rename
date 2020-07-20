@@ -1,0 +1,17 @@
+#!/bin/bash
+
+
+
+
+
+for D in *; do
+    if [ -d "${D}" ]; then
+      #echo "${D}"   # your processing here
+      i=0;
+      for filename in ./$D/*; do
+        i=$((i+1))
+        mv "$filename" "./$D/$i.jpeg"
+      done
+      cp "./$D/1.jpeg" "./$D/cover.jpeg"
+    fi
+done
