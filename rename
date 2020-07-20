@@ -9,8 +9,10 @@ for D in *; do
       #echo "${D}"   # your processing here
       i=0;
       for filename in ./$D/*; do
-        i=$((i+1))
-        mv "$filename" "./$D/$i.jpeg"
+        if [[ $filename != *"cover"* ]]; then
+          i=$((i+1))
+          mv "$filename" "./$D/$i.jpeg"
+        fi
       done
       cp "./$D/1.jpeg" "./$D/cover.jpeg"
     fi
