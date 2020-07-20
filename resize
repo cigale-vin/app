@@ -7,9 +7,9 @@ for D in *; do
       #echo "${D}"   # your processing here
       for filename in ./$D/*; do
         if [[ $filename == *"cover"* ]]; then
-          magick $filename -strip -auto-orient -define png:compression-level=9 -interlace plane -quality 60 -resize 300 $filename	
+          magick $filename -strip -auto-orient -resize 300 $filename	
 	else
-          magick $filename -strip -auto-orient -define png:compression-level=9 -interlace plane -quality 60 -resize 1200 $filename
+          magick $filename -strip -auto-orient -resize 1300 $filename
         fi
       done
     fi
